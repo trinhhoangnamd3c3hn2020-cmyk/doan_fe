@@ -98,16 +98,22 @@
         }
 
         .sanpham {
-            background-color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
 
-            border-radius: 20px;
-            position: relative;
-            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Đẩy nút xuống cuối */
+            height: 100%;
+            /* Đảm bảo các khung bằng nhau */
+            padding: 10px;
+            
 
 
+        }
+        .sanpham a{
+            border-radius: 100px;
+           
+           
         }
 
         .sanpham .img_product {
@@ -223,7 +229,7 @@
         .search-box {
             background: #f7f3ff;
             padding: 8px 15px;
-            width: 300px;
+            width: 100%;
             border-radius: 40px;
             display: flex;
             align-items: center;
@@ -258,12 +264,12 @@
                 </div>
             </div>
             <div class="col-md-6" style="text-align: right;">
-                <img width="100%" src="Ảnh bìa Facebook - Khám Phá Những Cuộc Phiêu Lưu (1).png" alt="hinh">
+                <img width="100%" src="hinh/Ảnh bìa Facebook - Khám Phá Những Cuộc Phiêu Lưu (1).png" alt="hinh">
             </div>
         </header>
         <nav class="navbar navbar-expand-lg bg-black sticky-lg-top" data-bs-theme="dark" style="border-radius: 10px;">
             <div class="container-fluid">
-                <img  src="hinh/download.png" alt="Bootstrap" width="170px" height="70px">
+                <img src="hinh/download.png" alt="Bootstrap" width="170px" height="70px">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -326,16 +332,14 @@
             </div>
             <div class="carousel-inner ">
                 <div class="carousel-item active">
-                    <img width="100%" src="Banner YouTube - Khám Phá Thế Giới Mới.png" class="d-block w-100"
-                        alt="...">
+                    <img width="100%" src="hinh/Banner YouTube - Khám Phá Thế Giới Mới.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img width="100%" src="Đen và Trắng Tập trung video Du lịch Hình thu nhỏ Youtube.png"
+                    <img width="100%" src="hinh/Đen và Trắng Tập trung video Du lịch Hình thu nhỏ Youtube.png"
                         class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img width="100%" src="Brand Identity.png" class="d-block w-100"
-                        alt="...">
+                    <img width="100%" src="hinh/Brand Identity.png" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -356,13 +360,14 @@
                     class="bi bi-chevron-down me-2 ms-2"></i></a>
         </div>
         <hr>
-        <div class="row  ">
+        <div class="row">
             <!-- 1 san pham  -->
-            <div class="col-lg-3 col-md-4 col-6   ">
+            <div class="col-lg-3 col-md-4 col-6">
                 <div class="sanpham shadow ">
 
-                    <img class="img_product" width="90%" src="hinh/1.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/1.jpg" alt="">
                     <p class="text-success"> </p>
+
                     <h5>Vô Thượng Sát thần</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:330,000<sup>đ</sup> </h6>
                     <div style="text-align: left;">
@@ -370,47 +375,53 @@
                         <h7 style="text-align: left;">| Chương:72</h7><br>
                     </div>
 
-                    <a href="#b1Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b1Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
+
                 </div>
             </div>
             <!-- 1 san pham  -->
             <div class="col-lg-3 col-md-4 col-6  ">
                 <div class="sanpham shadow">
 
-                    <img class="img_product" width="90%" src="hinh/2.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/2.jpg" alt="">
                     <p class="text-success"> </p>
+
+
                     <h5>Đệ Nhất Kiếm Thần</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:320,000<sup>đ</sup> </h6>
                     <div style="text-align: left;">
                         <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
                         <h7 style="text-align: left;">| Chương:65</h7><br>
                     </div>
-                    <a href="#b2Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b2Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
+
                 </div>
             </div>
             <!-- 1 san pham  -->
             <div class="col-lg-3 col-md-4 col-6  ">
                 <div class="sanpham shadow">
 
-                    <img class="img_product" width="90%" src="hinh/3.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/3.jpg" alt="">
                     <p class="text-success"> </p>
+
                     <h5>Thần Đạo Dán Tôn</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:310,000<sup>đ</sup> </h6>
                     <div style="text-align: left;">
                         <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1200N </h7>
                         <h7 style="text-align: left;">| Chương:73</h7><br>
                     </div>
-                    <a href="#b3Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b3Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
+
                 </div>
             </div>
             <!-- 1 san pham  -->
             <div class="col-lg-3 col-md-4 col-6  ">
                 <div class="sanpham shadow">
 
-                    <img class="img_product" width="90%" src="hinh/4.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/4.jpg" alt="">
                     <p class="text-success"> </p>
                     <h5>Vạn Cổ Thần Đế Vương</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:200,000<sup>đ</sup> </h6>
@@ -418,7 +429,7 @@
                         <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:2000N </h7>
                         <h7 style="text-align: left;">| Chương:52</h7><br>
                     </div>
-                    <a href="#b4Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b4Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
                 </div>
             </div>
@@ -426,7 +437,7 @@
             <div class="col-lg-3 col-md-4 col-6 ">
                 <div class="sanpham shadow">
 
-                    <img class="img_product" width="90%" src="hinh/5.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/5.jpg" alt="">
                     <p class="text-success"> </p>
                     <h5>Vinh Vũ Thiên Hạ</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:320,000<sup>đ</sup> </h6>
@@ -434,7 +445,7 @@
                         <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
                         <h7 style="text-align: left;">| Chương:45</h7><br>
                     </div>
-                    <a href="#b5Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b5Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
                 </div>
             </div>
@@ -442,7 +453,7 @@
             <div class="col-lg-3 col-md-4 col-6  ">
                 <div class="sanpham shadow">
 
-                    <img class="img_product" width="90%" src="hinh/6.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/6.jpg" alt="">
                     <p class="text-success"> </p>
                     <h5>Độc Tôn Tam Giới</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:400,000<sup>đ</sup> </h6>
@@ -450,14 +461,14 @@
                         <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1500N </h7>
                         <h7 style="text-align: left;">| Chương:100</h7><br>
                     </div>
-                    <a href="#b6Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b6Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-6  ">
                 <div class="sanpham shadow ">
 
-                    <img class="img_product" width="90%" src="hinh/7.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/7.jpg" alt="">
                     <p class="text-success"> </p>
                     <h5>Tiên Nghịch Thiên Đạo</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:300,000<sup>đ</sup> </h6>
@@ -465,14 +476,14 @@
                         <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
                         <h7 style="text-align: left;">| Chương:72</h7><br>
                     </div>
-                    <a href="#b7Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b7Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-6  ">
                 <div class="sanpham shadow">
 
-                    <img class="img_product" width="90%" src="hinh/8.jpg" alt="">
+                    <img class="img_product" width="100%" src="hinh/8.jpg" alt="">
                     <p class="text-success"> </p>
                     <h5>Thiên Tài Thiên Đạo</h5>
                     <h6 class="text-danger " style="text-align: left;">Giá:350,000<sup>đ</sup> </h6>
@@ -481,7 +492,7 @@
                         <h7 style="text-align: left;">| Chương:80</h7><br>
                     </div>
 
-                    <a href="#b8Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    <a href="#b8Modal" data-bs-toggle="modal" class="btn btn-primary mt-4">Đọc Ngay
                     </a>
                 </div>
             </div>
@@ -1483,7 +1494,7 @@
 
                         <div class="row mb-4">
                             <div class="col-md-6 mx-auto text-center">
-                                <img src="banner/truyện hay (2).png" alt="Giới thiệu Web Truyện"
+                                <img src="hinh/truyện hay (2).png" alt="Giới thiệu Web Truyện"
                                     class="img-fluid rounded shadow-sm">
                                 <p class="text-muted mt-2">Nơi chia sẻ đam mê đọc truyện cùng hàng triệu độc giả.</p>
                             </div>
