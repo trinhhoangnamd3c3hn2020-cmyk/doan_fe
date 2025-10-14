@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            width: 100%;
+            margin: auto;
+        }
+
+        header h1 {
+            font-size: 29px;
+            background: radial-gradient(circle, yellow 1%, red 10%, pink, pink);
+            background-size: contain;
+            color: transparent;
+            background-clip: text;
+        }
+
+        header h5 {
+            text-decoration: overline;
+        }
+
+        header img {
+            border-radius: 0 100px 0;
+        }
+
+
+
+        .footer {
+            color: #ccc;
+            padding: 40px 0;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .footer h5 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 15px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+
+
+        form.d-flex input {
+            width: 300px;
+        }
+
+        .navbar-nav .nav-link,
+        .btn {
+            white-space: nowrap;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            font-size: 15px;
+        }
+
+        .navbar-nav {
+            gap: 10px;
+
+        }
+
+        .card-body img {
+            height: 300px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 200px;
+        }
+
+        .sanpham {
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+
+            border-radius: 20px;
+            position: relative;
+            border-radius: 10px;
+
+
+        }
+
+        .sanpham .img_product {
+            transition: all 0.5s;
+            border-radius: 10px;
+        }
+
+        .sanpham .img_product:hover {
+            transform: translateY(-10px);
+
+
+
+        }
+
+        /* gioi thieu */
+        .modal-body {
+            background: linear-gradient(to bottom right, #f8f9fa, #eef1f6);
+        }
+
+        .modal-body p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .modal-body strong {
+            color: #0d6efd;
+        }
+
+        .modal-body em {
+            color: #6c757d;
+        }
+
+        /* tin tuc */
+        .modal-body {
+            background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+        }
+
+        .card-title {
+            font-weight: 600;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+        }
+
+        /* dang ki */
+        .modal-content {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .register-box {
+            max-width: 400px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-box h3 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .register-box p {
+            text-align: center;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+        }
+
+        select,
+        input {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        select:focus,
+        input:focus {
+            border-bottom: 1px solid #0d6efd;
+            box-shadow: none;
+        }
+
+        /* search */
+        .search {
+            background: #eee;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .search-box {
+            background: #f7f3ff;
+            padding: 8px 15px;
+            width: 300px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 9, 0, 0, 0.08);
+            border: 1px solid #ddd;
+        }
+
+        .search-box i {
+            margin-right: 8px;
+            font-size: 18px;
+            opacity: 0.6;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-lg ">
+        <!-- header -->
+        <header class="row">
+            <div class="col-md-6 d-flex align-items-end" style="text-align: center;">
+                <div>
+                    <h1> TRUYỆN HAY </h1>
+                    <h5>Cùng thưởng thức những câu truyện qua từng tác phẩm</h5>
+                </div>
+            </div>
+            <div class="col-md-6" style="text-align: right;">
+                <img width="100%" src="Ảnh bìa Facebook - Khám Phá Những Cuộc Phiêu Lưu (1).png" alt="hinh">
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg bg-black sticky-lg-top" data-bs-theme="dark" style="border-radius: 10px;">
+            <div class="container-fluid">
+                <img  src="hinh/download.png" alt="Bootstrap" width="170px" height="70px">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li>
+                            <a href="" data-bs-toggle="modal" class="btn btn-primary  mt-1"
+                                style="background-color: black; border: 1px solid black;">Trang Chủ
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#gtModal" data-bs-toggle="modal" class="btn btn-primary  mt-1"
+                                style="background-color: black; border: 1px solid black;">Giới thiệu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ttModal" data-bs-toggle="modal" class="btn btn-primary  mt-1"
+                                style="background-color: black; border: 1px solid black;">Tin tức
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#dkModal" data-bs-toggle="modal" class="btn btn-primary  mt-1"
+                                style="background-color: black; border: 1px solid black;">Đăng kí
+                            </a>
+                        </li>
+                        <li><a href="#dnModal" data-bs-toggle="modal" class="btn btn-dark text-center mt-1 "
+                                style="background-color: black; border: 1px solid black;">Đăng
+                                nhập
+                            </a></li>
+                        <li><a href="#dxModal" data-bs-toggle="modal" class="btn btn-dark text-center mt-1"
+                                style="background-color: black; border: 1px solid black;">Đăng
+                                Xuất
+                            </a></li>
+                    </ul>
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                    </head>
+
+                    <search>
+
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search">
+                        </div>
+
+                    </search>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner ">
+                <div class="carousel-item active">
+                    <img width="100%" src="Banner YouTube - Khám Phá Thế Giới Mới.png" class="d-block w-100"
+                        alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" src="Đen và Trắng Tập trung video Du lịch Hình thu nhỏ Youtube.png"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img width="100%" src="Brand Identity.png" class="d-block w-100"
+                        alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-1">
+            <h5>TRUYỆN HOT <i class="bi bi-fire"></i></h5>
+            <a href="#" class="btn btn-primary me-3"
+                style="border: 1px solid black; width: 100px;  height: 40px; background-color: #888;">TẤT CẢ<i
+                    class="bi bi-chevron-down me-2 ms-2"></i></a>
+        </div>
+        <hr>
+        <div class="row  ">
+            <!-- 1 san pham  -->
+            <div class="col-lg-3 col-md-4 col-6   ">
+                <div class="sanpham shadow ">
+
+                    <img class="img_product" width="90%" src="hinh/1.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Vô Thượng Sát thần</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:330,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
+                        <h7 style="text-align: left;">| Chương:72</h7><br>
+                    </div>
+
+                    <a href="#b1Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <!-- 1 san pham  -->
+            <div class="col-lg-3 col-md-4 col-6  ">
+                <div class="sanpham shadow">
+
+                    <img class="img_product" width="90%" src="hinh/2.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Đệ Nhất Kiếm Thần</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:320,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
+                        <h7 style="text-align: left;">| Chương:65</h7><br>
+                    </div>
+                    <a href="#b2Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <!-- 1 san pham  -->
+            <div class="col-lg-3 col-md-4 col-6  ">
+                <div class="sanpham shadow">
+
+                    <img class="img_product" width="90%" src="hinh/3.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Thần Đạo Dán Tôn</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:310,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1200N </h7>
+                        <h7 style="text-align: left;">| Chương:73</h7><br>
+                    </div>
+                    <a href="#b3Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <!-- 1 san pham  -->
+            <div class="col-lg-3 col-md-4 col-6  ">
+                <div class="sanpham shadow">
+
+                    <img class="img_product" width="90%" src="hinh/4.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Vạn Cổ Thần Đế Vương</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:200,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:2000N </h7>
+                        <h7 style="text-align: left;">| Chương:52</h7><br>
+                    </div>
+                    <a href="#b4Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <!-- 1 san pham  -->
+            <div class="col-lg-3 col-md-4 col-6 ">
+                <div class="sanpham shadow">
+
+                    <img class="img_product" width="90%" src="hinh/5.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Vinh Vũ Thiên Hạ</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:320,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
+                        <h7 style="text-align: left;">| Chương:45</h7><br>
+                    </div>
+                    <a href="#b5Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <!-- 1 san pham  -->
+            <div class="col-lg-3 col-md-4 col-6  ">
+                <div class="sanpham shadow">
+
+                    <img class="img_product" width="90%" src="hinh/6.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Độc Tôn Tam Giới</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:400,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1500N </h7>
+                        <h7 style="text-align: left;">| Chương:100</h7><br>
+                    </div>
+                    <a href="#b6Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6  ">
+                <div class="sanpham shadow ">
+
+                    <img class="img_product" width="90%" src="hinh/7.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Tiên Nghịch Thiên Đạo</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:300,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:1000N </h7>
+                        <h7 style="text-align: left;">| Chương:72</h7><br>
+                    </div>
+                    <a href="#b7Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-6  ">
+                <div class="sanpham shadow">
+
+                    <img class="img_product" width="90%" src="hinh/8.jpg" alt="">
+                    <p class="text-success"> </p>
+                    <h5>Thiên Tài Thiên Đạo</h5>
+                    <h6 class="text-danger " style="text-align: left;">Giá:350,000<sup>đ</sup> </h6>
+                    <div style="text-align: left;">
+                        <h7 class="text-primary "><i class="bi bi-heart me-1"></i>Live:2300N </h7>
+                        <h7 style="text-align: left;">| Chương:80</h7><br>
+                    </div>
+
+                    <a href="#b8Modal" data-bs-toggle="modal" class="btn btn-primary mt-1">Đọc Ngay
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="bg-light">
+            <div class="container mt-4">
+                <div class="mt-3">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">
+                                Giới thiệu Truyện Top
+                            </button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">
+                                Truyện thuật
+                            </button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">
+                                Truyện Nhiều Lược thích
+                            </button>
+                            <button class="nav-link" id="nav-footer-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-footer" type="button" role="tab" aria-controls="nav-footer"
+                                aria-selected="false">
+                                Đánh Giá
+                            </button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <!-- Tab 1 -->
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="row mt-3">
+                                <div class="col-md-4 ">
+                                    <h5>Chương 1</h5>
+                                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/14.jpg"
+                                        alt="hinh">
+                                    <div class="mt-3 ">
+                                        <b>Tác Giả:</b>Bạc Hà Miêu<br>
+                                        <b>Nguồn:</b> monkeyd.vn<br>
+                                        <b>Thể loại:</b> Tiên Hiệp, Ngôn tình<br>
+                                        <b>Trạng Thái:</b> Full
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <p class="mt-2 fs-3"><b>TA DỰA VÀO Y THUẬT TUNG HOÀNH TU TIÊN GIỚI</b></p>
+                                    <hr>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <div style="color: black;">
+                                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                                    </div>
+                                    <p class="text-start mt-3">
+                                        Tác giả: Bạc Hà Miêu
+
+                                        Thể loại: Ngôn Tình, Hệ Thống, Nữ Cường, Xuyên Không, Tiên Hiệp
+
+                                        Team dịch: Vũ Vi Yên Vũ
+
+                                        Giới thiệu:
+
+                                        Từ một bác sĩ phẫu thuật thiên tài xuyên thành phế vật của tu tiên giới.
+
+                                        Thẩm Dao Chu cầm dao mổ, tiếp tục nghề cũ.
+
+                                        Đại lão 1: Ta vì báo thù mà dựa vào đan dược để đột phá, không ngờ lại bị
+                                        đan
+                                        độc quấn thân, sau khi phẫu thuật, ta đã dẫn dắt môn phái trở lại vị trí số
+                                        một.
+
+                                        Đại lão 2: Ta là hậu duệ của danh môn nhưng lại bẩm sinh linh căn xung khắc
+                                        không thể tu luyện, sau khi phẫu thuật, một năm Trúc Cơ, ba năm Kim Đan,
+                                        mười
+                                        năm Nguyên Anh, hiện đang chuẩn bị phi thăng.
+
+                                        Đại lão 3: Ta vốn là kiếm tu bẩm sinh, bị người hãm hại vỡ đan điền, tâm ma
+                                        sinh
+                                        sôi, sau khi phẫu thuật, ta trở lại tiên đạo, một thanh kiếm quét ngang toàn
+                                        bộ
+                                        tu tiên giới.
+
+                                        Lúc đầu, mọi người trong tu tiên giới: Phẫu thuật?? Đây là tà ma ngoại đạo
+                                        gì
+                                        vậy! Không làm! Chúng ta không làm!
+
+                                        Sau đó, mọi người trong tu tiên giới: Lần bốc số cho sáu mươi năm tới của
+                                        Thẩm
+                                        đại lão tới rồi, mau đi cướp!
+
+                                        #Để y thuật hiện đại tỏa sáng trên đất tu tiên#
+                                    </p>
+                                </div>
+                            </div>
+                            <nav class="text-center mt-3" aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Tab 2 -->
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"
+                            tabindex="0">
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <h5>Truyện 1</h5>
+                                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/9.jpg"
+                                        alt="hinh">
+                                    <div class="mt-3">
+                                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                                        <b>Trạng Thái:</b> Full
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <p class="mt-2 fs-3"><b>THẦN ĐẠO ĐAN TÔN</b></p>
+                                    <hr>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <div style="color: black;">
+                                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                                    </div>
+                                    <p class="text-start mt-3">
+                                        Lăng Hàn - Một Đan Đế đại danh đỉnh định mang trong thân mình tuyệt thế công
+                                        pháp vì truy cầu bước cuối,
+                                        xé bỏ tấm màn thành thần nhưng thất bại đã phải bỏ mình. Thế nhưng ông trời
+                                        dường như không muốn tuyệt
+                                        đường người, Lăng Hàn đã được trọng sinh vào một thiếu niên cùng tên và điều
+                                        may
+                                        mắn nhất là
+                                        "Bất Diệt Thiên Kinh" ấn ký vẫn còn nằm nguyên trong tâm thức hắn.
+                                    </p>
+
+                                    <p class="text-start">
+                                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                                        tranh phong với vô số thiên
+                                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                                        đất:
+                                        <b>Ta, là người mạnh nhất!</b>
+                                    </p>
+                                </div>
+                            </div>
+                            <nav class="text-center mt-3" aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Tab 3 -->
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+                            tabindex="0">
+                            <div class="row mt-3">
+                                <div class="col-md-4">
+                                    <h5>Truyện 2</h5>
+                                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/15.jpg"
+                                        alt="hinh">
+                                    <div class="mt-3">
+                                        <b>Tác Giả:</b> Vong Ngữ<br>
+                                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                                        <b>Thể loại:</b> Tiên Hiệp, Kiếm Hiệp<br>
+                                        <b>Trạng Thái:</b> Full
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <p class="mt-2 fs-3"><b>PHÀM NHÂN TU TIÊN</b></p>
+                                    <hr>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <div style="color: black;">
+                                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                                    </div>
+                                    <p class="text-start mt-3">
+                                        Phàm Nhân Tu Tiên là một câu chuyện Tiên Hiệp kể về Hàn Lập - Một người bình
+                                        thường nhưng lại gặp vô vàn cơ duyên để bước đi trên con đường tu tiên,
+                                        không
+                                        phải anh hùng - cũng chẳng phải tiểu nhân, Hàn Lập từng bước khẳng định
+                                        mình...
+                                        Liệu Hàn Lập và người yêu có thể cùng bước trên con đường tu tiên và có một
+                                        cái
+                                        kết hoàn mỹ? Những thử thách nào đang chờ đợi bọn họ?
+
+                                        - Truyện kết cấu khá hợp lý, tình tiết không quá chậm, không quá nhanh, diễn
+                                        tả
+                                        khá đặc biệt, lời văn trôi chảy, nhân vật tính cách đặc thù. Nhân vật chính,
+                                        Hàn
+                                        Lập, mang hơi hướng khá cô độc. Bạn nào thích đọc Tru Tiên hoặc Thương Thiên
+                                        chắc sẽ thích Phàm Nhân Tu Tiên Truyện. Mời bạn đọc cùng thưởng thức và dõi
+                                        theo
+                                        bước chân của Hàn Lập!
+
+                                        - Tags: pham nhan tu tien prc full, truyen tien hiep
+                                    </p>
+                                </div>
+                            </div>
+                            <nav class="text-center mt-3" aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="tab-pane fade" id="nav-footer" role="tabpanel" aria-labelledby="nav-footer-tab"
+                            tabindex="0">
+                            <p>Đánh giá Web truyện online </p>
+                            <div>
+                                <span class="pe-2 fs-3" style="color: orangered;">4,5</span><i class="bi ti-star-fill"
+                                    style="color:orangered"><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                                </i>
+                            </div>
+                            <div class="mt-3 fs-4">
+
+                                <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="90"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar text-bg-danger" style="width: 90%">90%</div>
+                                </div>
+                                <div class="progress mt-2" role="progressbar" aria-label="Danger example"
+                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar text-bg-danger" style="width: 80%">80%</div>
+                                </div>
+                                <div class="progress mt-2" role="progressbar" aria-label="Danger example"
+                                    aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar text-bg-danger" style="width: 30%">30%</div>
+                                </div>
+                                <div class="progress mt-2" role="progressbar" aria-label="Danger example"
+                                    aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar text-bg-danger" style="width: 10%">10%</div>
+                                </div>
+                                <div class="progress mt-2" role="progressbar" aria-label="Danger example"
+                                    aria-valuenow="2" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar text-bg-danger" style="width: 2%">2%</div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <p>PHẠM ĐÀO MINH VŨ</p>
+                                <i class="mt-1" style="color: orangered;"><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></i>
+                                <p>Đọc truyện bố cục rõ ràng cho shop 1 live</p>
+                                <a href="" class="text-decoration-none text-dark" data-bs-toggle="tooltip"
+                                    data-bs-title="15/09/2025"> <i style="color: blue;"><i
+                                            class="bi bi-hand-thumbs-up-fill"></i>Hữu
+                                        ích<i class="bi bi-chat-fill"></i>Thảo luận </i> Đã dùng khoảng 2 tuần <i
+                                        class="bi bi-question-circle-fill"></i>
+                                </a><br>
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <p>CHÂU TRẦN TRÚC LY</p>
+                                <i class="mt-1" style="color: orangered;"><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></i>
+                                <p>Truyện hay và hấp dẫn, sẽ quay lại</p>
+                                <a href="" class="text-decoration-none text-dark" data-bs-toggle="tooltip"
+                                    data-bs-title="19/09/2025"> <i style="color: blue;"><i
+                                            class="bi bi-hand-thumbs-up-fill"></i>Hữu
+                                        ích<i class="bi bi-chat-fill"></i>Thảo luận </i> Đã dùng khoảng 4 tuần <i
+                                        class="bi bi-question-circle-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- footer -->
+    <footer class=" footer bg-dark text-center">
+        <div class="container  ">
+            <div class="row ">
+                <div class="col-md-5 mb-4  ">
+                    <h5>THÔNG TIN</h5>
+                    <p>
+                        Nhà sản xuất tổng hợp THÀNH PHỐ HỒ CHÍ MINH<br><br>
+                        256 âu cơ ,phường bình thạnh ,quận tân phú ,TP.hồ chí minh<br><br>
+                        (094)88473756-(737)03943484-(838)283498239
+                    </p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15677.891438482011!2d106.6154449871582!3d10.775049599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ea144839ef1%3A0x798819bdcd0522b0!2zQ2FvIMSQ4bqzbmcgQ8O0bmcgTmdo4buHIFRow7RuZyBUaW4gVFAuSENN!5e0!3m2!1svi!2s!4v1759981590009!5m2!1svi!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-4 mb-4  ">
+                    <h5>Liên Hệ Trực Tiếp</h5>
+                    <ul class="list-unstyled text-center ">
+                        <li><a href="#">Giới Thiệu </a></li>
+                        <hr style="width: 60%; margin-left: 60px; ">
+                        <li><a href="#">Tin Tức </a></li>
+                        <hr style="width: 60%; margin-left: 60px; ">
+                        <li><a href="#">đăng kí</a></li>
+                        <hr style="width: 60%; margin-left: 60px; ">
+                        <li><a href="#">Quên mật khẩu</a></li>
+                        <hr style="width: 60%; margin-left: 60px; ">
+                        <li><a href="#">Tài khoản</a></li>
+                        <hr style="width: 60%; margin-left: 60px; ">
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 text-center  ">
+                    <h5>THÔNG TIN NHANH</h5>
+                    <ul class="list-unstyled">
+                        <li>Gọi mua hàng: 1800.1060</li>
+                        <hr style="width: 60%;margin-left: 60px; ">
+                        <li>Gọi khiếu nại: 1800.1062</li>
+                        <hr style="width: 60%;margin-left: 60px; ">
+                        <li>Gọi tư vấn: 1800.1064</li>
+                        <hr style="width: 60%;margin-left: 60px; ">
+                        <li>Gọi dự án: 1800.1763</li>
+                        <hr style="width: 60%;margin-left: 60px; ">
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">Copyright © 2027 TRUYENHAY</div>
+        </div>
+    </footer>
+</body>
+<!-- b1 -->
+<div class="modal fade" id="b1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4 text-center">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/1.jpg" alt="hinh">
+                    <div class="mt-3 text-start " style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>THẦN ĐẠO ĐAN TÔN</b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Lăng Hàn - Một Đan Đế đại danh đỉnh định mang trong thân mình tuyệt thế công
+                        pháp vì truy cầu bước cuối,
+                        xé bỏ tấm màn thành thần nhưng thất bại đã phải bỏ mình. Thế nhưng ông trời
+                        dường như không muốn tuyệt
+                        đường người, Lăng Hàn đã được trọng sinh vào một thiếu niên cùng tên và điều
+                        may
+                        mắn nhất là
+                        "Bất Diệt Thiên Kinh" ấn ký vẫn còn nằm nguyên trong tâm thức hắn.
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b2 -->
+<div class="modal fade" id="b2Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4 text-center">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/2.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>ĐỆ NHẤT KIẾM THẦN</b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Lăng Hàn - Một Đan Đế đại danh đỉnh định mang trong thân mình tuyệt thế công
+                        pháp vì truy cầu bước cuối,
+                        xé bỏ tấm màn thành thần nhưng thất bại đã phải bỏ mình. Thế nhưng ông trời
+                        dường như không muốn tuyệt
+                        đường người, Lăng Hàn đã được trọng sinh vào một thiếu niên cùng tên và điều
+                        may
+                        mắn nhất là
+                        "Bất Diệt Thiên Kinh" ấn ký vẫn còn nằm nguyên trong tâm thức hắn.
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b3 -->
+<div class="modal fade" id="b3Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4 text-center">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/3.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>THẦN ĐẠO </b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Lăng Hàn - Một Đan Đế đại danh đỉnh định mang trong thân mình tuyệt thế công
+                        pháp vì truy cầu bước cuối,
+                        xé bỏ tấm màn thành thần nhưng thất bại đã phải bỏ mình. Thế nhưng ông trời
+                        dường như không muốn tuyệt
+                        đường người, Lăng Hàn đã được trọng sinh vào một thiếu niên cùng tên và điều
+                        may
+                        mắn nhất là
+                        "Bất Diệt Thiên Kinh" ấn ký vẫn còn nằm nguyên trong tâm thức hắn.
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b4 -->
+<div class="modal fade" id="b4Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3 text-center">
+                <div class="col-md-4">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/4.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>VINH VŨ THIÊN HẠ</b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Tên khác: Cho em muôn trượng hào quang, Quân tử báo ân
+                        Thể loại: Ngôn tình, hiện đại
+
+                        Đã 27 tuổi nhưng đại thiếu gia Lục thị lại chẳng hề rung động vì bất kỳ một cô gái nào nên cha
+                        mẹ cùng em trai đã chuốc say anh rồi đưa lên giường một cô gái xa lạ.
+
+                        5 năm sau, tiểu thiếu gia Lục Kình Vũ vì không có mẹ và cú shock quá khứ nên đã rơi vào trầm
+                        cảm.
+
+                        Một người cha "chưa từng có cảm giác rung động trước bất kỳ ai" và một thằng bé con "không thích
+                        tiếp xúc với bất kỳ ai" đã trở nên "lầy lội" hơn bao giờ hết khi gặp được Ninh Tịch. Cả hai cha
+                        con đều vừa gặp đã yêu người phụ nữ này, một người mong muốn chiếm hữu, một người vô cùng ỷ lại,
+                        cuối cùng tạo ra những tình huống dở khóc dở cười cho độc giả.
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b5 -->
+<div class="modal fade" id="b5Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3 text-center">
+                <div class="col-md-4">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/5.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>VINH VŨ THIÊN HẠ</b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Nhóm dịch: Sói Già
+                        Đả tự: Bựa Thập Ngũ BLH
+
+                        Lục Thiếu Du, linh hồn bị xuyên qua đến thế giới khác, nhập vào thân thể của một thiếu gia không
+                        có địa vị phải trải qua cuộc sống không khác gì nô bộc.
+                        Thế giới này lấy Vũ vi cường, lấy Linh vi tôn, nghe đồn khi võ đạo đỉnh phong, linh đạo đạt đến
+                        cực hạn có thể phá toái hư không.
+                        Lục Thiếu Du mang theo ký ức từ kiếp trước tái sinh, không cam lòng làm một thiếu gia chẳng khác
+                        gì củi mục.
+
+                        Trong thế giới xa lạ,
+                        Say - nằm trên gối mỹ nhân,
+                        Tỉnh - nắm quyền thiên hạ.
+                        Đây mới là cuộc sống đáng mơ ước.
+                        Linh - Vũ song tu
+                        Bá chủ kiêu hùng
+                        Đã đến, ta sẽ lưu lại một huyền thoại......
+
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b6 -->
+<div class="modal fade" id="b6Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3 text-center">
+                <div class="col-md-4">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px; " class="shadow-lg" src="hinh/6.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b></b>ĐỘC TÔN TAM GIỚI</p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Thiên Đế Chi Tử Giang Trần chuyển sinh lên thân thể một thiếu niên bị chư hầu khi dễ bắt đầu
+                        trên con đường đuổi giết máu tanh dần dần đi lên.
+                        Trước mặt Giang Trần ai dám xưng là thiên tài? Không ai có thể hiểu Thiên bằng Thiên Đế Chi Tử.
+                        Thiên tài? Kẻ thuận ta là thiên, kẻ nghịch ta phải giết!!
+
+                        Mạch truyện luôn bình thản nhưng không kém phần gay cấn, tình tiết logic xuyên suốt từ đầu đến
+                        cuối, các tình tiết đan xen lẫn nhau luôn được đẩy lên cao trào khiến độc giả bị cuốn vào mạch
+                        truyện. Đương nhiên vẫn như các bộ truyện khác kết thúc của Lê Thiên rất có hậu
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b7 -->
+<div class="modal fade" id="b7Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3 text-center">
+                <div class="col-md-4">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/7.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>TIÊN NGHỊCH THIÊN ĐẠO</b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Giới Thiệu Truyện
+
+                        Tiên Nghịch là câu chuyện Tiên Hiệp kể về Vương Lâm - một thiếu niên bình thường, may mắn được
+                        gia nhập vào một môn phái tu tiên xuống dốc của nước Triệu, vì thiếu linh căn, vì một hiểu nhầm
+                        tai hại, vì một khối thiết tinh và nhờ có được một "Thần Bí Hạt Châu". Vương Lâm đã bước lên con
+                        đường tu tiên và trên con đường này, hắn sẽ đối mặt với chuyện gì?
+
+                        - Tu tiên là nghịch thiên hay thuận thiên, là vô tình hay hữu tình? Hãy cùng dõi theo bước chân
+                        của Vương Lâm qua 1976 chương Truyện Tiên Nghịch> để biết rõ những điều này bạn nhé!
+
+                        - Tags: truyen tien hiep, tien nghich prc full
+
+                    </p>
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- b8 -->
+<div class="modal fade" id="b8Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="row mt-3 text-center">
+                <div class="col-md-4">
+                    <h5>Truyện 1</h5>
+                    <img width="70%" style="border-radius: 10px;" class="shadow-lg" src="hinh/8.jpg" alt="hinh">
+                    <div class="mt-3 text-start" style="margin-left: 52px;">
+                        <b>Tác Giả:</b> Cô Đơn Địa Phi<br>
+                        <b>Nguồn:</b> Tiên Hiệp, Huyền Huyễn<br>
+                        <b>Thể loại:</b> Phong Nguyệt Lâu<br>
+                        <b>Trạng Thái:</b> Full
+                    </div>
+                </div>
+
+                <div class="col-md-8 text-center">
+                    <p class="mt-2 fs-3"><b>THẦN ĐẠO ĐAN TÔN</b></p>
+                    <hr>
+                    <div class="text-warning">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div style="color: black;">
+                        <i>Đánh Giá <b>8,4</b>/10 từ <b>20 lượt</b></i>
+                    </div>
+                    <p class="text-start mt-3">
+                        Lăng Hàn - Một Đan Đế đại danh đỉnh định mang trong thân mình tuyệt thế công
+                        pháp vì truy cầu bước cuối,
+                        xé bỏ tấm màn thành thần nhưng thất bại đã phải bỏ mình. Thế nhưng ông trời
+                        dường như không muốn tuyệt
+                        đường người, Lăng Hàn đã được trọng sinh vào một thiếu niên cùng tên và điều
+                        may
+                        mắn nhất là
+                        "Bất Diệt Thiên Kinh" ấn ký vẫn còn nằm nguyên trong tâm thức hắn.
+                    </p>
+
+                    <p class="text-start">
+                        Từ nay về sau sóng gió cuộn trào nổi lên, Đan Đế ngày xưa bây giờ phải cùng
+                        tranh phong với vô số thiên
+                        tài trẻ tuổi, lại bắt đầu một truyền thuyết mới như để chứng minh với trời
+                        đất:
+                        <b>Ta, là người mạnh nhất!</b>
+
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-primary fs-5">Xem</a>
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dang nhap -->
+<div class="modal fade" id="dnModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h3 class="modal-title fs-6 " id="exampleModalLabel"><b class="text-center">
+                        <h2>Đăng Nhập<i class="bi bi-person-fill ms-1"></i></h2>
+                    </b></h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Số Tài khoản</h5>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="tichketprice" placeholder="">
+                    <label for="tickket">tài khoản</label>
+                </div>
+            </div>
+            <div class="modal-body">
+                <h5>Mật Khẩu</h5>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="tichketprice" placeholder="">
+                    <label for="tickket">mật khẩu</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="text-bg-primary fs-5" data-bs-dismiss="modal"
+                    style="border: 1px solid blue; border-radius: 4px;">Xác Nhận
+                </button>
+                <button type="button" class="btn btn-danger fs-6" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- đăng xuất -->
+<div class="modal fade" id="dxModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel">Bạn có chắc bạn muốn đăng xuất không?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <p class="text-center mx-4">khi bạn đăng xuất,địa chỉ email này sẽ không còn được liên kết hồ sơ của bạn nữa
+            </p><br>
+            <b class="text-center mx-4"><label class="me-2"><input type="checkbox"
+                        style="width: 18px;height: 18px;"></label>xóa mục yêu thích lịch sử ,mật khẩu và dữ lệu duyệt
+                web khác khỏi thiết bị này.</b>
+            <div class="modal-footer">
+                <button class="text-bg-primary fs-5" data-bs-dismiss="modal"
+                    style="border: 1px solid blue; border-radius: 4px;">Xác Nhận
+                </button>
+                <button type="button" class="btn btn-danger fs-6" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- gioi thieu -->
+<div class="modal fade" id="gtModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        Hàng 1: Tiêu đề
+                        <div class="row mb-4">
+                            <div class="col-md-8 mx-auto text-center">
+                                <h3 class="fw-bold text-primary">Giới thiệu về Web Truyện Online</h3>
+                                <hr class="w-50 mx-auto border-primary">
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <div class="col-md-10 mx-auto bg-white shadow p-4 rounded">
+                                <p>
+                                    <strong>Web Truyện Online</strong> là nền tảng đọc truyện chuyên nghiệp, mang đến
+                                    cho độc giả không gian giải trí
+                                    văn minh, tiện lợi và hiện đại. Với hàng ngàn bộ <strong>truyện tranh</strong>,
+                                    <strong>truyện chữ</strong> và
+                                    <strong>light novel</strong> đa dạng thể loại như tiên hiệp, ngôn tình, trinh thám,
+                                    hành động, và giả tưởng,
+                                    chúng tôi cam kết mang đến trải nghiệm đọc truyện tuyệt vời nhất cho người dùng.
+                                </p>
+                                <p>
+                                    Giao diện được thiết kế thân thiện, dễ sử dụng trên mọi thiết bị. Mỗi ngày, đội ngũ
+                                    của chúng tôi đều cập nhật
+                                    liên tục những bộ truyện mới, đảm bảo nội dung phong phú và chất lượng.
+                                </p>
+                                <p>
+                                    <em>Sứ mệnh của chúng tôi</em> là kết nối cộng đồng yêu truyện, nơi mỗi độc giả đều
+                                    có thể tìm thấy những câu
+                                    chuyện mình yêu thích, cùng nhau chia sẻ cảm xúc và niềm đam mê đọc truyện.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-4">
+                            <div class="col-md-6 mx-auto text-center">
+                                <img src="banner/truyện hay (2).png" alt="Giới thiệu Web Truyện"
+                                    class="img-fluid rounded shadow-sm">
+                                <p class="text-muted mt-2">Nơi chia sẻ đam mê đọc truyện cùng hàng triệu độc giả.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- tin tuc -->
+<div class="modal fade" id="ttModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 " id="exampleModalLabel"><i class="bi bi-book-half fs-2"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                <div class="modal-body ">
+                    <div class="container-fluid ">
+                        <!-- Hàng 1: Tiêu đề -->
+                        <div class="row mb-4">
+                            <div class="col-md-8 mx-auto text-center ">
+                                <h3 class="fw-bold text-danger">Tin tức truyện mới nhất</h3>
+                                <hr class="w-50 mx-auto border-danger">
+                                <p class="text-muted">Cập nhật liên tục những tin tức nóng hổi về truyện tranh và truyện
+                                    chữ mỗi ngày</p>
+                            </div>
+                        </div>
+
+                        <!-- Hàng 2: Danh sách tin tức -->
+                        <div class="row g-4">
+                            <!-- Tin 1 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <img width="100%" src="hinh/18.jpg" class="card-img-top" alt="Tin 1"
+                                        style="height: max-content;">
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-primary">Ra mắt truyện “Thiên Hạ Đệ Nhất Kiếm”</h5>
+                                        <p class="card-text text-muted">Bộ truyện tiên hiệp đình đám được độc giả mong
+                                            chờ nay đã có mặt trên Web Truyện Online.</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <small class="text-secondary">Cập nhật: 11/10/2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tin 2 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <img width="100%" src="hinh/19.jpg" class="card-img-top" alt="Tin 2"
+                                        style="height: auto;">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">Top truyện hot tháng 10</h5>
+                                        <p class="card-text text-muted">Khám phá những bộ truyện được đọc nhiều nhất
+                                            trong tháng với hàng triệu lượt xem.</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <small class="text-secondary">Cập nhật: 10/10/2025</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tin 3 -->
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <img width="100%" src="hinh/14.png" class="card-img-top" alt="Tin 3"
+                                        style="height: auto;">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">Cập nhật giao diện mới</h5>
+                                        <p class="card-text text-muted">Web Truyện Online ra mắt giao diện hiện đại, tốc
+                                            độ tải nhanh và trải nghiệm đọc mượt hơn.</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <small class="text-secondary">Cập nhật: 08/10/2025</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dang ki -->
+<div class="modal fade" id="dkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="register-box">
+                <h3>ĐĂNG KÝ THỬ</h3>
+                <p>Hãy để chúng tôi đồng hành kinh doanh cùng bạn!</p>
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Tên đăng nhập:</label>
+                        <input type="text" class="form-control" placeholder="Nhập tên đăng nhập">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <input type="email" class="form-control" placeholder="Nhập email của bạn">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Số điện thoại:</label>
+                        <input type="tel" class="form-control" placeholder="Nhập số điện thoại">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">Mật khẩu:</label>
+                        <input type="password" class="form-control" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="text-center"> <button type="submit" class="btn btn-primary ">ĐĂNG KÝ DÙNG THỬ</button>
+                    </div>
+
+                </form>
+            </div>
+            <div class="text-end m-1">
+                <button type="button" class="btn btn-danger fs-6 w-25 " style="text-align: center;"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+</html>
+<script> const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
